@@ -1,0 +1,4 @@
+name: MultiBlockBreak
+version: '${project.version}'
+main: net.kumc.lab.multiblockbreak.MultiBlockBreak
+api-version: 1.16
