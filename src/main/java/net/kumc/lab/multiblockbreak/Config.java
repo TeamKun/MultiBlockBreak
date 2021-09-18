@@ -14,4 +14,5 @@ public class Config {
     public static boolean couldHappenAccident = true;
     public static double accidentProbability = 1.0;
     public static int accidentRadius = 30;
+    public static boolean exceptCreativePlayer = false;
 }

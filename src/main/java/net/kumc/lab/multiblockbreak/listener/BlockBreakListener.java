@@ -3,6 +3,7 @@ package net.kumc.lab.multiblockbreak.listener;
 import net.kumc.lab.multiblockbreak.Config;
 import net.kumc.lab.multiblockbreak.MultiBlockBreak;
 import net.kumc.lab.multiblockbreak.Region;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -28,6 +29,10 @@ public class BlockBreakListener implements Listener {
             return;
         }
 
+        if (Config.exceptCreativePlayer && p.getGameMode().equals(GameMode.CREATIVE)) {
+            return;
+        }
+
         List<Region> regionList = Arrays.asList(Region.values());
         Collections.shuffle(regionList);
 
@@ -35,7 +40,7 @@ public class BlockBreakListener implements Listener {
         if (Config.couldHappenAccident && Math.random() * 100 < Config.accidentProbability) {
             radius = Config.accidentRadius;
         }
-       
+
         Set<Block> blocks = regionList.get(0).getBlocks.apply(e.getBlock().getLocation(), radius);
         blocks.forEach(x -> {
             if (x.getType().equals(Material.AIR) || x.getType().equals(Material.CAVE_AIR)) {
