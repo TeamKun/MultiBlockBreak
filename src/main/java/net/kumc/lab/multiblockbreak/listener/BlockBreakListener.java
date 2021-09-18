@@ -50,7 +50,11 @@ public class BlockBreakListener implements Listener {
             MultiBlockBreak.taskScheduler.offer(new BukkitRunnable() {
                 @Override
                 public void run() {
-                    x.breakNaturally(p.getInventory().getItemInMainHand(), Config.shouldBlockTriggerEffect);
+                    if (Config.shouldItemDrop) {
+                        x.breakNaturally(p.getInventory().getItemInMainHand(), Config.shouldBlockTriggerEffect);
+                    } else {
+                        x.setType(Material.AIR);
+                    }
                 }
             });
         });

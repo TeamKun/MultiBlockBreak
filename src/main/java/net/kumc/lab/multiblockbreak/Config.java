@@ -10,9 +10,10 @@ public class Config {
     public static int minRadius = 4;
     public static int maxRadius = 8;
     public static int numberOfExecutionsPerSec = 25000;
-    public static boolean shouldBlockTriggerEffect = true;
+    public static boolean shouldBlockTriggerEffect = false;
     public static boolean couldHappenAccident = true;
     public static double accidentProbability = 1.0;
-    public static int accidentRadius = 30;
+    public static int accidentRadius = 16;
     public static boolean exceptCreativePlayer = false;
+    public static boolean shouldItemDrop = false;
 }
