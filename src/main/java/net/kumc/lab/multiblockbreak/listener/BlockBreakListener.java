@@ -32,6 +32,10 @@ public class BlockBreakListener implements Listener {
         Collections.shuffle(regionList);
 
         int radius = (int) (Math.random() * (Config.maxRadius - Config.minRadius) + Config.minRadius);
+        if (Config.couldHappenAccident && Math.random() * 100 < Config.accidentProbability) {
+            radius = Config.accidentRadius;
+        }
+       
         Set<Block> blocks = regionList.get(0).getBlocks.apply(e.getBlock().getLocation(), radius);
         blocks.forEach(x -> {
             if (x.getType().equals(Material.AIR) || x.getType().equals(Material.CAVE_AIR)) {
