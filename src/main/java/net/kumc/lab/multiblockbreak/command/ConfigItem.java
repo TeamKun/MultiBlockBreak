@@ -14,11 +14,11 @@ public class ConfigItem extends Command {
 
         usage(builder -> {
             if (clazz.equals(Integer.class) || clazz.equals(int.class)) {
-                builder.integerArgument(name);
+                builder.integerArgument("integer");
             }
 
             if (clazz.equals(Double.class) || clazz.equals(double.class)) {
-                builder.doubleArgument(name);
+                builder.doubleArgument("double");
             }
 
             if (clazz.equals(Boolean.class) || clazz.equals(boolean.class)) {
