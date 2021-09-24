@@ -19,7 +19,7 @@ public class RemovePlayerCommand extends Command {
     @Override
     public void execute(CommandContext ctx) {
         int count = 0;
-        for (Object arg : ((List) ctx.getTypedArgs())) {
+        for (Object arg : ((List) ctx.getTypedArgs().get(0))) {
             if (arg instanceof Player) {
                 if (Config.enabledPlayers.remove(((Player) arg).getUniqueId())) {
                     count++;
