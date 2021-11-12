@@ -43,7 +43,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>dev.kotx.flylib</pattern>
-                                    <shadedPattern>net.kunmc.lab</shadedPattern>
+                                    <shadedPattern>net.kumc.lab.multiblockbreak</shadedPattern>
                                     <excludes>
                                     </excludes>
                                 </relocation>
