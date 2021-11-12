@@ -40,6 +40,14 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>dev.kotx.flylib</pattern>
+                                    <shadedPattern>net.kunmc.lab</shadedPattern>
+                                    <excludes>
+                                    </excludes>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
